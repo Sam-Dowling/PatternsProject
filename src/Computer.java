@@ -1,3 +1,3 @@
 
-public class Computer implements Networkable {
+public class Computer{
 }
