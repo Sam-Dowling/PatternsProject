@@ -1,3 +1,3 @@
 
-public class Proxy extends Server {
+public class Proxy {
 }

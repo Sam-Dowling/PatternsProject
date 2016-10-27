@@ -2,19 +2,32 @@
 public class Driver {
 
     public static void main(String[] args) {
-        /*
-        Computer comp1 = new Computer("10.10.10.1");
-        Computer comp2 = new Computer("10.10.10.2");
 
-        comp1.sendPacket(comp2);
+
+
+        Router router = new Router();
+
+        DHCP dhcp = new DHCP(new int[]{0,100});
+
+        Computer computer_a = new Computer();
+        computer_a.connect(router);
+
+        Computer computer_b = new Computer();
+        computer_b.connect(router);
+
+
+        /*
+
+        String payload = "Hello";
+
+        String destination_hostname = "www.google.com";
+
+        String destination_address = dnslookup(hostname);
+
+        send(destination_address, TCP, payload);
         */
 
-        IPAddress ip = new IPAddress("123.456.789.123");
 
-
-
-
-        System.out.println(ip.getIPAsString());
     }
 
 

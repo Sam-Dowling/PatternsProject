@@ -1,3 +1,3 @@
 
-public class DNS extends Server{
+public class DNS extends NetworkClient {
 }

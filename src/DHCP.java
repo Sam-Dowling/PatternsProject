@@ -1,13 +1,13 @@
 
 
-public class DHCP extends Server{
+public class DHCP extends NetworkClient {
 
-    private int port = 1234;
-
-    // 0.0.0.0 - 0.0.0.100
-    private int[] range = new int[]{0,100};
-
+    private int[] range;
     private int[] assigned;
+
+    public DHCP(int[] range){
+        this.range = range;
+    }
 
     public String assignIp(){
         //TODO
