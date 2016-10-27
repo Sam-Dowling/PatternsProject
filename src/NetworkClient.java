@@ -1,23 +1,37 @@
 
 public abstract class NetworkClient {
 
-    public void get_ip_from_dhcp(){
-
-    }
-
-    public void set_dns_server_ip(){
-
-    }
+    private String IPAddress;
 
     public void connect(Router router){
-
+        this.IPAddress = router.assignIP();
     }
 
-    public void receivePacket(Packet p){
-        if(p.getType().equals("UDP")){
-        //implement UDP receive protocol
-        }else{
-        //implement TCP receive protocol
+    public String getIP(){
+        return this.IPAddress;
+    }
+
+
+
+
+    public void receivePacket(Packet packet){
+        String payload = parsePacket(packet);
+        System.out.println(payload);
+    }
+
+    private String parsePacket(Packet packet){
+        switch(packet.getType()){
+
+            case UDP:
+                return new String(packet.getPayload());
+                break;
+
+            case TCP:
+                return packet.getPayload();
+                break;
+
         }
     }
+
+
 }
