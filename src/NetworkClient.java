@@ -15,22 +15,8 @@ public abstract class NetworkClient {
 
 
     public void receivePacket(Packet packet){
-        String payload = parsePacket(packet);
+        String payload = packet.getPayload();
         System.out.println(payload);
-    }
-
-    private String parsePacket(Packet packet){
-        switch(packet.getType()){
-
-            case UDP:
-                return new String(packet.getPayload());
-                break;
-
-            case TCP:
-                return packet.getPayload();
-                break;
-
-        }
     }
 
 

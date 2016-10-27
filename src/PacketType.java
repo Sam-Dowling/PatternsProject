@@ -1,3 +1,3 @@
 public enum PacketType {
-    UDP,TCP
+    NONE,UDP,TCP
 }

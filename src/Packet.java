@@ -1,14 +1,13 @@
 public abstract class Packet {
 
-    private enum type;
+    private PacketType type = PacketType.NONE;
 
     String senderIP;
     String receiverIP;
-
     String payload;
 
 
-    public packetType getType(){
+    public PacketType getType(){
         return this.type;
     }
 

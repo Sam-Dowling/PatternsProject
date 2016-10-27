@@ -1,7 +1,7 @@
 
 public class TCPPacket extends Packet {
 
-    private enum type = TCP;
+    private PacketType type = PacketType.TCP;
 
 
     public TCPPacket(String senderIP, String receiverIP, String payload){

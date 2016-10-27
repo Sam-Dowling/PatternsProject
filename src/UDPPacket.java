@@ -1,7 +1,7 @@
 
 public class UDPPacket extends Packet {
 
-    private enum type = UDP;
+    private PacketType type = PacketType.UDP;
 
     char[] payload;
 
@@ -13,8 +13,8 @@ public class UDPPacket extends Packet {
 
     }
 
-    public char[] getPayload(){
-        return this.payload;
+    public String getPayload(){
+        return new String(this.payload);
     }
 
 
