@@ -1,19 +1,25 @@
-public abstract class Packet {
+public class Packet {
 
-    private PacketType type = PacketType.NONE;
+    private String senderIP;
+    private String receiverIP;
+    private String payload;
 
-    String senderIP;
-    String receiverIP;
-    String payload;
-
-
-    public PacketType getType(){
-        return this.type;
-    }
-
-    public String getPayload(){
-        return this.payload;
+    public Packet(String data, String sender, String recipient){
+        this.senderIP = sender;
+        this.receiverIP = recipient;
+        this.payload = data;
     }
 
 
+    public String getSenderIP() {
+        return senderIP;
+    }
+
+    public String getReceiverIP() {
+        return receiverIP;
+    }
+
+    public String getPayload() {
+        return payload;
+    }
 }

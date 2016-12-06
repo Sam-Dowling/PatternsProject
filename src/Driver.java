@@ -2,40 +2,26 @@
 public class Driver {
 
     public static void main(String[] args) {
+        Router home = new Router();
 
-        DNS dns = new DNS();
+        Phone samsung = new Phone();
+        samsung.connect(home);
 
-        Router router = new Router(dns);
+        Computer dell = new Computer();
+        dell.connect(home);
 
-        Computer computer_a = new Computer();
-        computer_a.connect(router);
+        samsung.send("hello", dell);
 
-        Computer computer_b = new Computer();
-        computer_b.connect(router);
-
-
-        String destination_ip = computer_b.getIP();
-
-        computer_a.sendPacket("Hello", destination_ip);
-
-
-
+//        Printer brother = new Printer();
+//        brother.connect();
+//
+//        samsung.print("Test Print");
+//
+//        dell.resolve("www.example.com");
 
 
-
-
-        /*
-
-        String payload = "Hello";
-
-        String destination_hostname = "www.google.com";
-
-        String destination_address = dnslookup(hostname);
-
-        send(destination_address, TCPPacket, payload);
-        */
-
-
+//        samsung.setProxy();
+//        samsung.send("hello", dell);
     }
 
 

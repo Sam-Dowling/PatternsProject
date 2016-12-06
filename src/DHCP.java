@@ -1,18 +1,16 @@
-
-
 public class DHCP{
 
-    private final String ipBase = "192.168.1"; // maybe implement subnets?
+    private final String ipBase = "192.168.1";
 
     private int[] range;
     private int assigned;
 
-    public DHCP(int[] range){
-        this.range = range;
-        this.assigned = range[0];
+    public DHCP(){
+        this.range = new int[]{0,255};
+        this.assigned = 0;
     }
 
-    public String getFreeIpAddress(){
+    public String getFreeIP(){
         return String.format("%s.%d", this.ipBase, incrementIP());
     }
 
