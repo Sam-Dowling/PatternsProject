@@ -1,13 +1,12 @@
 
-public class Computer extends Networkable implements NetworkClient {
+public class Computer extends Networkable{
 
     Computer(){
 
     }
 
-    @Override
-    public void connect(Router r) {
-        System.out.println(String.format("Connecting to %s Through Ethernet", r.getIP()));
-        this.setIP(r.assignIP());
+    public void connect(Router r){
+        connect(r, ConnectionType.ETHERNET);
+        this.setIP(r.registerClient(this));
     }
 }

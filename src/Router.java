@@ -1,15 +1,25 @@
+import java.util.ArrayList;
+import java.util.List;
 
 class Router extends Networkable {
 
     private DHCP dhcp;
+    private List<Networkable> clients = new ArrayList<>();
 
     Router(){
         this.dhcp = new DHCP();
-        this.setIP(this.assignIP());
+        this.setIP(dhcp.getFreeIP());
     }
 
-    String assignIP(){
+    String registerClient(Networkable client){
+        clients.add(client);
         return dhcp.getFreeIP();
+    }
+
+    void receive(Packet p){
+        for (Networkable client : clients) {
+            client.receive(p);
+        }
     }
 
 }

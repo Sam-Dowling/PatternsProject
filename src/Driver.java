@@ -12,10 +12,13 @@ public class Driver {
 
         samsung.send("hello", dell);
 
-//        Printer brother = new Printer();
-//        brother.connect();
-//
-//        samsung.print("Test Print");
+        dell.send("Hello There", home);
+
+        Printer lexmark = Printer.getInstance();
+        lexmark.connect(home);
+
+
+        samsung.print("Test Print", lexmark);
 //
 //        dell.resolve("www.example.com");
 
