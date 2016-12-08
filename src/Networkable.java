@@ -1,6 +1,5 @@
 
 abstract class Networkable implements NetworkClient{
-    private ConnectionAdapter connectionAdapter;
 
     private String IP;
 
@@ -21,10 +20,6 @@ abstract class Networkable implements NetworkClient{
         System.out.println(String.format("\"%s\" received from %s", p.getPayload(), p.getSenderIP()));
     }
 
-    void print(String printerData, Printer printer){
-        printer.printPage(printerData);
-    }
-
     @Override
     public void connect(Router r, ConnectionType connectionType) {
         switch(connectionType){
@@ -34,10 +29,10 @@ abstract class Networkable implements NetworkClient{
 
             case NFC:
             case WIFI:
-                connectionAdapter = new ConnectionAdapter(connectionType);
+                ConnectionAdapter connectionAdapter = new ConnectionAdapter(connectionType);
                 connectionAdapter.connect(r, connectionType);
                 break;
         }
-
+        this.setIP(r.registerClient(this));
     }
 }

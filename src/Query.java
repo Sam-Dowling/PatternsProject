@@ -1,0 +1,4 @@
+
+interface Query {
+    void displayIP();
+}

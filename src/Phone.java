@@ -1,12 +1,9 @@
 
-public class Phone extends Networkable{
+class Phone extends Networkable{
+    final OperatingSystem os = new Android();
 
-    Phone(){
-
+    Phone(Router r){
+        os.startOS(r);
     }
 
-    public void connect(Router r){
-        connect(r, ConnectionType.NFC);
-        this.setIP(r.registerClient(this));
-    }
 }

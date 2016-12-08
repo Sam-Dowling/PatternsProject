@@ -4,27 +4,22 @@ public class Driver {
     public static void main(String[] args) {
         Router home = new Router();
 
-        Phone samsung = new Phone();
-        samsung.connect(home);
+        Phone samsung = new Phone(home);
+        Computer dell = new Computer(home);
 
-        Computer dell = new Computer();
-        dell.connect(home);
-
-        samsung.send("hello", dell);
-
-        dell.send("Hello There", home);
+        samsung.os.send("Hello", dell.os);
+        dell.os.send("Hello Everyone", home); //broadcast message
 
         Printer lexmark = Printer.getInstance();
-        lexmark.connect(home);
+        lexmark.print("Test Print");
 
+        DNS googleDNS = new DNS(home);
+        googleDNS.add("www.samsung.com", samsung.os.getIP());
+        googleDNS.add("www.dell.com", dell.os.getIP());
 
-        samsung.print("Test Print", lexmark);
-//
-//        dell.resolve("www.example.com");
+        Query dnsQuery = new ProxyDNSQuery("www.samsung.com", googleDNS);
+        dnsQuery.displayIP();
 
-
-//        samsung.setProxy();
-//        samsung.send("hello", dell);
     }
 
 

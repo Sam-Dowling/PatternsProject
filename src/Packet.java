@@ -34,34 +34,6 @@ public class Packet {
 
 }
 
-interface PacketType{
-    String packData(String data);
-    String unpackData(String data);
-}
 
 
-class TCPPacketType implements PacketType{
 
-    @Override
-    public String packData(String data) {
-        return String.format(":TCP:%s:TCP:", data);
-    }
-
-    @Override
-    public String unpackData(String data) {
-        return data.replaceAll(":TCP:", "");
-    }
-}
-
-class UDPPacketType implements PacketType{
-
-    @Override
-    public String packData(String data) {
-        return String.format(":UDP:%s:UDP:", data);
-    }
-
-    @Override
-    public String unpackData(String data) {
-        return data.replaceAll(":UDP:", "");
-    }
-}

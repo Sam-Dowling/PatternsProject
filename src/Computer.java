@@ -1,12 +1,8 @@
 
-public class Computer extends Networkable{
+class Computer extends Networkable{
+    final OperatingSystem os = new Windows();
 
-    Computer(){
-
-    }
-
-    public void connect(Router r){
-        connect(r, ConnectionType.ETHERNET);
-        this.setIP(r.registerClient(this));
+    Computer(Router r){
+        os.startOS(r);
     }
 }
