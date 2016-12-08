@@ -2,7 +2,6 @@
 abstract class Networkable implements NetworkClient{
 
     private String IP;
-    private Printer printer = null;
 
     void setIP(String ip) {
         this.IP = ip;
@@ -21,13 +20,6 @@ abstract class Networkable implements NetworkClient{
         System.out.println(String.format("\"%s\" received from %s", p.getPayload(), p.getSenderIP()));
     }
 
-    void addPrinter(){
-        this.printer = Printer.getInstance();
-    }
-
-    void print(String printData){
-        this.printer.print(printData);
-    }
 
     @Override
     public void connect(Router r, ConnectionType connectionType) {
