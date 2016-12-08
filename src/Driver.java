@@ -10,8 +10,8 @@ public class Driver {
         samsung.os.send("Hello", dell.os);
         dell.os.send("Hello Everyone", home); //broadcast message
 
-        Printer lexmark = Printer.getInstance();
-        lexmark.print("Test Print");
+        dell.os.addPrinter();
+        dell.os.print("Test Print");
 
         DNS googleDNS = new DNS(home);
         googleDNS.add("www.samsung.com", samsung.os.getIP());
