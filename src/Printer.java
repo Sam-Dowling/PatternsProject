@@ -8,7 +8,7 @@ class Printer{
         return singleton;
     }
 
-    static void print(String printData){
+    void print(String printData){
         System.out.println(String.format("Printing: %s", printData));
     }
 

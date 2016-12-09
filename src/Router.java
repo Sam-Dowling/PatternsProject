@@ -21,5 +21,4 @@ class Router extends Networkable {
             client.receive(p);
         }
     }
-
 }

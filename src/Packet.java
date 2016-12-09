@@ -10,7 +10,7 @@ class Packet {
         this.senderIP = sender;
         this.receiverIP = recipient;
 
-        if(payload.length() > 10){
+        if(payload.length() > 10){ // If a packet is "too big" to fit into a UDP packet
             this.packetType = new TCPPacketType();
         }else{
             this.packetType = new UDPPacketType();
