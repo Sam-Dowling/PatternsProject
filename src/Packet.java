@@ -1,10 +1,10 @@
-public class Packet {
+class Packet {
 
 
-    private String senderIP;
-    private String receiverIP;
-    private String payload;
-    private PacketType packetType;
+    private final String senderIP;
+    private final String receiverIP;
+    private final String payload;
+    private final PacketType packetType;
 
     public Packet(String payload, String sender, String recipient){
         this.senderIP = sender;

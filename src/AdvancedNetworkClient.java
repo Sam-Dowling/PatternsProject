@@ -1,5 +1,5 @@
 
-public interface AdvancedNetworkClient {
+interface AdvancedNetworkClient {
     void connectWifi(Router r);
     void connectNFC(Router r);
 }

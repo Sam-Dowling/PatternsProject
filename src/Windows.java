@@ -1,5 +1,5 @@
 
-public class Windows extends OperatingSystem {
+class Windows extends OperatingSystem {
 
     @Override
     void initializeApplications() {

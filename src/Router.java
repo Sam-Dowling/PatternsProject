@@ -3,8 +3,8 @@ import java.util.List;
 
 class Router extends Networkable {
 
-    private DHCP dhcp;
-    private List<Networkable> clients = new ArrayList<>();
+    private final DHCP dhcp;
+    private final List<Networkable> clients = new ArrayList<>();
 
     Router(){
         this.dhcp = new DHCP();

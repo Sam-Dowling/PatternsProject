@@ -1,5 +1,5 @@
 
-public class ApplicationBuilder {
+class ApplicationBuilder {
     public Applications computerApplications(){
         Applications apps = new Applications();
         apps.addApp(new Firefox());

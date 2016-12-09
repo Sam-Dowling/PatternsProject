@@ -1,6 +1,6 @@
-public class Printer{
+class Printer{
 
-    private static Printer singleton = new Printer( );
+    private static final Printer singleton = new Printer( );
 
     private Printer() { }
 
@@ -8,7 +8,7 @@ public class Printer{
         return singleton;
     }
 
-    protected static void print(String printData){
+    static void print(String printData){
         System.out.println(String.format("Printing: %s", printData));
     }
 

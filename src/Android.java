@@ -1,5 +1,5 @@
 
-public class Android extends OperatingSystem{
+class Android extends OperatingSystem{
 
     @Override
     void initializeApplications() {

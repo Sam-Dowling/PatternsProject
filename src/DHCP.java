@@ -1,8 +1,8 @@
-public class DHCP{
+class DHCP{
 
     private final String ipBase = "192.168.1";
 
-    private int[] range;
+    private final int[] range;
     private int assigned;
 
     public DHCP(){

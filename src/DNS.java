@@ -1,9 +1,9 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class DNS extends Networkable{
+class DNS extends Networkable{
 
-    private Map<String, String> dnsEntries = new HashMap<>();
+    private final Map<String, String> dnsEntries = new HashMap<>();
 
     DNS(Router r) {
         connect(r, ConnectionType.ETHERNET);
