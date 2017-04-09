@@ -1,2 +1,2 @@
-# PatternsProject
-Network Simulator employing flexibility through design patterns
+# Network Simulator
+Network simulation using OOP Patterns to simulate real-world Lan configurations and computing principles.
